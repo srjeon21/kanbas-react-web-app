@@ -30,6 +30,10 @@
     justify-content: center;
     align-items: center;
 }
+.wd-kanbas-navigation li a#neu {
+    color: red;
+    font-size: 4em;
+}
 .wd-kanbas-navigation a i.fa-user {
-    color: white;
+    color: grey;
 }
