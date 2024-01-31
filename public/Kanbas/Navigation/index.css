@@ -1,3 +1,9 @@
+.kanbas-nav {
+    background-color: black;
+    border: none;
+    width: 80px;
+    vertical-align: top;
+}
 .wd-kanbas-navigation {
     background-color: black;
     list-style: none;

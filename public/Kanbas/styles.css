@@ -9,3 +9,6 @@ table.organizer {
     border-spacing: 0;
     border: 0;
 }
+.card {
+    width: 270px;
+}
