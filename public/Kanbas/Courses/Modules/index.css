@@ -16,16 +16,36 @@
 }
 
 .wd-modules > li > div {
-  padding: 6px;
+  padding: 12px;
   border-left: 1px solid gray !important;
 }
 
 .wd-modules > li > ul > li {
-  padding: 5px;
+  padding: 12px;
   border-top: 1px solid gray !important;
   border-left: 2px solid green;
 }
 
 .wd-modules > li {
   margin-bottom: 20px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.buttons > * {
+    height: 40px;
+    border-color: black;
+    margin: 10px 1px;
+}
+
+.buttons > .btn-secondary {
+    background-color: lightgray;
+    color: black;
+}
+a {
+    text-decoration: none;
+    color: red;
 }

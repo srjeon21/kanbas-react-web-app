@@ -5,14 +5,15 @@
     <link rel="stylesheet" href="/Kanbas/Courses/Modules/index.css" />
   </head>
   <body>
-    <!-- Implement buttons Collapse All, View Progress, etc. here -->
-    <button>Collapse All</button>
-    <button>View Progress</button>
-    <button><i class="fa fa-check-circle text-success"></i> Publish All</button>
-    <button>+ Module</button>
-    <button><i class="fa fa-ellipsis-v ms-2"></i> </button>
+    <div class="buttons">
+        <button class="btn btn-secondary">Collapse All</button>
+        <button class="btn btn-secondary">View Progress</button>
+        <button class="btn btn-secondary"><i class="fa fa-check-circle text-success"></i> Publish All</button>
+        <button class="btn btn-danger">+ Module</button>
+        <button class="btn btn-secondary"><i class="fa fa-ellipsis-v ms-2"></i> </button>
+    </div><hr />
     <ul class="list-group wd-modules">
-      <li class="list-group-item module-week">
+      <li class="list-group-item">
         <div>
           <i class="fa fa-ellipsis-v"></i> Week 0
           <span class="float-end">
@@ -80,8 +81,17 @@
           </li>
           <li class="list-group-item">
             <i class="fa fa-ellipsis-v"></i>
-            <i class="fa-solid fa-link"></i>
+            <i class="fa-solid fa-link text-success"></i>
             &nbsp <a href="#">Introduction to Web Development <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            <span class="float-end">
+              <i class="fa fa-check-circle text-success"></i>
+              <i class="fa fa-ellipsis-v ms-2"></i>
+            </span>
+          </li>
+          <li class="list-group-item">
+            <i class="fa fa-ellipsis-v"></i>
+            <i class="fa-solid fa-link text-success"></i>
+            &nbsp <a href="#">Creating a React Application <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
             <span class="float-end">
               <i class="fa fa-check-circle text-success"></i>
               <i class="fa fa-ellipsis-v ms-2"></i>
