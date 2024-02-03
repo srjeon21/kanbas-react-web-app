@@ -1,0 +1,15 @@
+button {
+    height: 40px;
+    border-color: black;
+    margin: 10px 1px;
+}
+button.btn-secondary {
+    background-color: lightgray;
+    color: black;
+}
+.smaller {
+    font-size: 0.7em;
+}
+#course-status {
+    white-space: nowrap;
+}

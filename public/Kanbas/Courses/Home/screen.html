@@ -5,6 +5,7 @@
         <link rel="stylesheet" href="/Kanbas/Navigation/index.css" />
         <link rel="stylesheet" href="/Kanbas/Courses/Navigation/index.css" />
         <link rel="stylesheet" href="/Kanbas/Courses/Modules/index.css" />
+        <link rel="stylesheet" href="/Kanbas/Courses/Home/index.css" />
         <link rel="stylesheet" href="/libs/bootstrap/bootstrap.min.css" />
         <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.css" rel="stylesheet"/>
     </head>
@@ -270,28 +271,43 @@
             </li>
             </ul>
         </div>
-        <div class="col-2 d-none d-xl-block">
-          <h2>Course Status</h2>
-          <div class="row">
-            <button class="col">Unpublish</button>
-            <button class="col">Published</button>
+        <div class="col-2 d-none d-xl-block" id="course-status">
+          <div class="buttons">
+            <button class="btn btn-secondary"><i class="fa-solid fa-binoculars"></i> Student View</button>
           </div>
-          <ul>
-              <li><a href="#">Import Existing Content</a></li>
-              <li><a href="#">Import From Commons</a></li>
-              <li><a href="#">Choose Home Page</a></li>
-              <li><a href="#">View Course Stream</a></li>
-              <li><a href="#">New Announcement</a></li>
-              <li><a href="#">New Analytics</a></li>
-              <li><a href="#">View Course Notification</a></li>
-          </ul>
-          <h2>Coming Up</h2>
-          <a href="#">View Calendar</a>
-          <ul>
-              <li><a href="#">Lecture CS4550.12631.202410 Sep 7 at 11:45am</a></li>
-              <li><a href="#">Lecture CS4550.12631.202410 Sep 11 at 11:45am</a></li>
-              <li><a href="#">CS5610 06 SP23 Lecture Sep 11 at 6pm</a></li>
-          </ul>
+          <hr />
+          <h4>Course Status</h4>
+          <div class="container">
+            <div class="row">
+              <button class="col btn btn-secondary"><i class="fa-solid fa-ban"></i> Unpublish</button>
+              <button class="col btn btn-success"><i class="fa fa-check-circle"></i> Published</button>
+            </div>
+            <div class="row">
+              <button class="btn btn-secondary"><i class="fa-solid fa-file-import"></i> Import Existing Content</button>
+              <button class="btn btn-secondary"><i class="fa-solid fa-c"></i> Import From Commons</button>
+              <button class="btn btn-secondary"><i class="fa-solid fa-bullseye"></i> Choose Home Page</button>
+              <button class="btn btn-secondary"><i class="fa-solid fa-chart-simple"></i> View Course Stream</button>
+              <button class="btn btn-secondary"><i class="fa-solid fa-bullhorn"></i> New Announcement</button>
+              <button class="btn btn-secondary"><i class="fa-solid fa-chart-simple"></i> New Analytics</button>
+              <button class="btn btn-secondary"><i class="fa-regular fa-bell"></i> View Course Notification</button>
+            </div>
+            <br/>
+            <div class="row">
+              <p class="col"><b>Coming Up</b></p>
+              <p class="col smaller text-danger"><i class="fa-regular fa-calendar"></i>View Calendar</p>
+              <hr/>
+            </div>
+            <div class="row">
+              <p><i class="fa-regular fa-calendar"></i><span class=text-danger> Lecture</span></p>
+              <p>CS4550.12631.202410<br/>Sep 7 at 11:45am</p>
+              <br/>
+              <p><i class="fa-regular fa-calendar"></i><span class=text-danger> Lecture</span></p>
+              <p>CS4550.12631.202410<br/>Sep 11 at 11:45am</p>
+              <br/>
+              <p><i class="fa-regular fa-calendar"></i><span class=text-danger> Lecture</span></p>
+              <p>CS5610 06 SP23<br/>Sep 11 at 11:45am</p>
+            </div>
+          </div>
         </div>
       </div>
     </body>

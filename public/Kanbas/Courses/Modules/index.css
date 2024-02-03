@@ -28,6 +28,10 @@
   border-left: 3px solid green;
 }
 
+.wd-modules > .list-group-item {
+  padding: 0;
+}
+
 .buttons {
     display: flex;
     justify-content: flex-end;
