@@ -12,3 +12,6 @@ table.organizer {
 .card {
     width: 270px;
 }
+.d-flex {
+    gap: 15px;
+}

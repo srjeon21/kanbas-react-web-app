@@ -49,6 +49,5 @@
     color: black;
 }
 a {
-    text-decoration: none;
-    color: red;
+    text-decoration: none !important;
 }
