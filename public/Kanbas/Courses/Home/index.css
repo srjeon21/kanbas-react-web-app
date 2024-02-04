@@ -13,3 +13,12 @@ button.btn-secondary {
 #course-status {
     white-space: nowrap;
 }
+#courseNav {
+    background: white;
+}
+#courseNav > ul > li > a {
+    color: red;
+}
+.active {
+    font-weight: bold !important;
+}
