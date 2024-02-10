@@ -1,0 +1,7 @@
+[ { "_id": "BK1000", "name": "Intro to Baking", "number": "BK1000", "startDate": "2024-01-10",
+    "endDate": "2024-05-15", "image": "bake.jpg"  },
+  { "_id": "ES2050", "name": "Global Warming", "number": "ES2050", "startDate": "2024-01-10",
+    "endDate": "2024-05-15", "image": "environment.jpg"  },
+  { "_id": "AR1500", "name": "Nature Painting", "number": "AR1500", "startDate": "2024-01-10",
+    "endDate": "2024-05-15", "image": "paint.jpg"  }
+ ]
