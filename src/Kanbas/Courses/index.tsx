@@ -2,6 +2,7 @@ import { courses } from "../../Kanbas/Database";
 import { useParams, Navigate, Route, Routes } from "react-router-dom";
 import { HiMiniBars3 } from "react-icons/hi2";
 import CourseNavigation from "./Navigation";
+import Modules from "./Modules";
 
 function Courses() {
   const { courseId } = useParams();
@@ -14,9 +15,9 @@ function Courses() {
       <CourseNavigation />
       <div>
         <Routes>
-            <Route path="/" element={<Navigate to="Home" />} />
+            <Route path="/" element={<Navigate to="Home"/>} />
             <Route path="Home" element={<h1>Home</h1>} />
-            <Route path="Modules" element={<h1>Modules</h1>} />
+            <Route path="Modules" element={<Modules/>} />
             <Route path="Piazza" element={<h1>Piazza</h1>} />
             <Route path="Assignments" element={<h1>Assignments</h1>} />
             <Route path="Assignments/:assignmentId" element={<h1>Assignment Editor</h1>} />

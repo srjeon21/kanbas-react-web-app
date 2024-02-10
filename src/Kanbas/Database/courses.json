@@ -1,7 +1,6 @@
-[ { "_id": "BK1000", "name": "Intro to Baking", "number": "BK1000", "startDate": "2024-01-10",
+[ { "_id": "RS101", "name": "Rocket Propulsion", "number": "RS4550", "startDate": "2024-01-10",
     "endDate": "2024-05-15", "image": "bake.jpg"  },
-  { "_id": "ES2050", "name": "Global Warming", "number": "ES2050", "startDate": "2024-01-10",
+  { "_id": "RS102", "name": "Aerodynamics", "number": "RS4560", "startDate": "2024-01-10",
     "endDate": "2024-05-15", "image": "environment.jpg"  },
-  { "_id": "AR1500", "name": "Nature Painting", "number": "AR1500", "startDate": "2024-01-10",
-    "endDate": "2024-05-15", "image": "paint.jpg"  }
- ]
+  { "_id": "RS103", "name": "Spacecraft Design", "number": "RS4570", "startDate": "2024-01-10",
+    "endDate": "2024-05-15", "image": "paint.jpg"  } ]

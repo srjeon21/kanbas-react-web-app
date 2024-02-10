@@ -5,12 +5,12 @@ function CourseNavigation() {
                 "People", "Panopto Video", "Discussions", "Announcements", "Pages", "Files",
                 "Rubrics", "Outcomes", "Collaborations", "Syllabus", "Settings"];
   const { pathname } = useLocation();
-  console.log("Pathname in Cou>Nav: " + pathname)
+  const courseId = pathname.split("/")[3];
   return (
     <ul className="wd-navigation">
       {links.map((link, index) => (
         <li key={index} className={pathname.includes(link) ? "wd-active" : ""}>
-          <Link to={`/Kanbas/Courses/${link}`}>{link}</Link>
+          <Link to={`/Kanbas/Courses/${courseId}/${link}`}>{link}</Link>
         </li>
       ))}
     </ul>

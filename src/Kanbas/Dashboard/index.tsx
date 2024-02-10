@@ -6,7 +6,7 @@ function Dashboard() {
   return (
     <div className="p-4">
       <h1>Dashboard</h1><hr />
-      <h2>Published Courses (courses.size())</h2><hr />
+      <h2>Published Courses (12)</h2><hr />
       <div className="row">
         <div className="row row-cols-1 row-cols-md-5 g-4">
           {courses.map((course) => (
@@ -18,7 +18,7 @@ function Dashboard() {
                   <Link className="card-title" to={`/Kanbas/Courses/${course._id}`}
                     style={{ textDecoration: "none", color: "navy", fontWeight: "bold" }}>
                     {course.name} </Link>
-                  <p className="card-text">{course.name}</p>
+                  <p className="card-text">{course.number}</p>
                   <Link to={`/Kanbas/Courses/${course._id}`} className="btn btn-primary">
                     Go </Link>
                 </div>
