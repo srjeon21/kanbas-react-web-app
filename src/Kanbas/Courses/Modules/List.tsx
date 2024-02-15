@@ -8,7 +8,15 @@ function ModuleList() {
   const [selectedModule, setSelectedModule] = useState(modulesList[0]);
   return (
     <>
-      {/* <!-- Add buttons here --> */}
+    <div>
+
+      <div className="buttons">
+      <button className="btn btn-secondary">Collapse All</button>
+        <button className="btn btn-secondary">View Progress</button>
+        <button className="btn btn-secondary"><span className="text-success"><FaCheckCircle/></span> Publish All</button>
+        <button className="btn btn-danger">+ Module</button>
+        <button className="btn btn-secondary"><FaEllipsisV/> </button>
+      </div><hr/>
       <ul className="list-group wd-modules">
         {modulesList.map((module) => (
           <li
@@ -40,6 +48,7 @@ function ModuleList() {
           </li>
         ))}
       </ul>
+    </div>
     </>
   );
 }
