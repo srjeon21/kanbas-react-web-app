@@ -32,34 +32,36 @@ function ModuleList() {
       </div><hr/>
       <ul className="list-group wd-modules">
       <li className="list-group-item">
-        <button onClick={() => dispatch(addModule({ ...module, course: courseId }))}>
-          Add
-        </button>
-        <button onClick={() => dispatch(updateModule(module))}>
-          Update
-        </button>
-        <input
-          value={module.name}
-          onChange={(e) =>
-            dispatch(setModule({ ...module, name: e.target.value }))
-          }/>
-        <textarea
-          value={module.description}
-          onChange={(e) =>
-            dispatch(setModule({ ...module, description: e.target.value }))
-          }/>
+        <div className="form-group">
+          <button className="btn btn-success" onClick={() => dispatch(addModule({ ...module, course: courseId }))}>
+            Add
+          </button>
+          <button className="btn btn-warning" onClick={() => dispatch(updateModule(module))}>
+            Update
+          </button>
+          <input className="form-control"
+            value={module.name}
+            onChange={(e) =>
+              dispatch(setModule({ ...module, name: e.target.value }))
+            }/>
+          <textarea className="form-control"
+            value={module.description}
+            onChange={(e) =>
+              dispatch(setModule({ ...module, description: e.target.value }))
+            }/>
+        </div>
       </li>
         {moduleList
         .filter((module) => module.course === courseId)
         .map((module, index) => (
           <li key={index} className="list-group-item">
-              <button onClick={() => dispatch(setModule(module))}>
-              Edit
-            </button>
-              <button onClick={() => dispatch(deleteModule(module._id))}>
-              Delete
-            </button>
             <div>
+              <button className="btn btn-warning" onClick={() => dispatch(setModule(module))}>
+                Edit
+              </button>
+                <button className="btn btn-danger" onClick={() => dispatch(deleteModule(module._id))}>
+                Delete
+              </button><br/>
               <FaEllipsisV className="me-2" />
               {module.name}
               <span className="float-end">

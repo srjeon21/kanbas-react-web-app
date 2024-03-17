@@ -1,10 +1,3 @@
-.wd-modules, .wd-modules * {
-  border-radius: 0%;
-  border: none;
-  margin: 0px;
-  padding: 0px;
-}
-
 .wd-modules {
   margin: 5px;
 }
@@ -12,20 +5,25 @@
 .wd-modules > li {
   background-color: lightgray;
   border: 1px solid gray !important;
-  border-left: none !important;
   margin-top: 20px;
   margin-bottom: 40px;
 }
 
 .wd-modules > li > div {
   padding: 12px;
-  border-left: 1px solid gray !important;
 }
 
 .wd-modules > li > ul > li {
   padding: 12px;
   border-top: 1px solid gray !important;
   border-left: 3px solid green;
+}
+
+.wd-modules, .list-group {
+  border-radius: 0;
+  padding: 0px;
+  border: none;
+  margin: 0px;
 }
 
 .wd-modules > .list-group-item {
