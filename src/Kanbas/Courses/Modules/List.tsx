@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { modules } from "../../Database";
 import { FaEllipsisV, FaCheckCircle, FaPlusCircle } from "react-icons/fa";
 import { useParams } from "react-router";
 import { useSelector, useDispatch } from "react-redux";
@@ -33,12 +32,14 @@ function ModuleList() {
       <ul className="list-group wd-modules">
       <li className="list-group-item">
         <div className="form-group">
-          <button className="btn btn-success" onClick={() => dispatch(addModule({ ...module, course: courseId }))}>
-            Add
-          </button>
-          <button className="btn btn-warning" onClick={() => dispatch(updateModule(module))}>
-            Update
-          </button>
+          <div className="buttons">
+            <button className="btn btn-success" onClick={() => dispatch(addModule({ ...module, course: courseId }))}>
+              Add
+            </button>
+            <button className="btn btn-warning" onClick={() => dispatch(updateModule(module))}>
+              Update
+            </button>
+          </div>
           <input className="form-control"
             value={module.name}
             onChange={(e) =>
@@ -54,14 +55,16 @@ function ModuleList() {
         {moduleList
         .filter((module) => module.course === courseId)
         .map((module, index) => (
-          <li key={index} className="list-group-item">
+          <li key={index} className="list-group-item" onClick={() => setSelectedModule(module)}>
             <div>
-              <button className="btn btn-warning" onClick={() => dispatch(setModule(module))}>
-                Edit
-              </button>
-                <button className="btn btn-danger" onClick={() => dispatch(deleteModule(module._id))}>
-                Delete
-              </button><br/>
+              <div className="buttons">
+                <button className="btn btn-warning" onClick={() => dispatch(setModule(module))}>
+                  Edit
+                </button>
+                  <button className="btn btn-danger" onClick={() => dispatch(deleteModule(module._id))}>
+                  Delete
+                </button><br/>
+              </div>
               <FaEllipsisV className="me-2" />
               {module.name}
               <span className="float-end">

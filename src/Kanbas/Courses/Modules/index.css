@@ -46,6 +46,12 @@
     background-color: lightgray;
     color: black;
 }
+
+.list-group-item .buttons {
+  display: block;
+  margin: 0;
+}
+
 a {
     text-decoration: none !important;
 }
