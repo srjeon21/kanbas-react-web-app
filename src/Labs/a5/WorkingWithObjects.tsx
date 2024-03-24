@@ -11,10 +11,10 @@ function WorkingWithObjects() {
         <div>
             <h3>Working With Objects</h3>
             <h4>Modifying Properties</h4>
-            <a href={`${ASSIGNMENT_URL}/title/${assignment.title}`}>
+            <a className="btn btn-primary" href={`${ASSIGNMENT_URL}/title/${assignment.title}`}>
                 Update Title
             </a>
-            <input type="text"
+            <input className="form-control" type="text"
                 onChange={(e) => setAssignment({ ...assignment,
                     title: e.target.value })}
                 value={assignment.title}/>
