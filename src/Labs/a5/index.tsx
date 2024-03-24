@@ -1,4 +1,6 @@
+import WorkingWithArrays from "../a3/JavaScript/arrays/WorkingWithArrays";
 import EncodingParametersInURLs from "./EncodingParametersInURLs";
+import WorkingWithObjects from "./WorkingWithObjects";
 
 function Assignment5() {
   return (
@@ -8,6 +10,7 @@ function Assignment5() {
         Welcome
       </a>
       <EncodingParametersInURLs/>
+      <WorkingWithObjects/>
       </div>
       );
 }
