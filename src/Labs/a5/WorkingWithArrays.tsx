@@ -24,9 +24,9 @@ function WorkingWithArrays() {
         <input className="form-control" type="text" value={todo.title}
             onChange={(e) => setTodo({
             ...todo, title: e.target.value })}/>
-        <input type="checkbox" checked={todo.completed}
+        <input type="checkbox" defaultChecked={todo.completed}
             onChange={(e) => setTodo({
-            ...todo, completed: Boolean(e.target.value) })}/>
+            ...todo, completed: (e.target.checked) })}/>
         <input className="form-control" type="text" value={todo.description}
             onChange={(e) => setTodo({
             ...todo, title: e.target.value })}/>
