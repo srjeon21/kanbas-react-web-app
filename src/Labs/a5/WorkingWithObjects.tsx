@@ -11,15 +11,15 @@ function WorkingWithObjects() {
     const fetchAssignment = async () => {
         const response = await axios.get(`${ASSIGNMENT_URL}`);
         setAssignment(response.data);
-      };
-      const updateTitle = async () => {
-        const response = await axios
-          .get(`${ASSIGNMENT_URL}/title/${assignment.title}`);
-        setAssignment(response.data);
-      };
-      useEffect(() => {
+    };
+    const updateTitle = async () => {
+    const response = await axios
+        .get(`${ASSIGNMENT_URL}/title/${assignment.title}`);
+    setAssignment(response.data);
+    };
+    useEffect(() => {
         fetchAssignment();
-      }, []);
+    }, []);
 
     return (
         <div>

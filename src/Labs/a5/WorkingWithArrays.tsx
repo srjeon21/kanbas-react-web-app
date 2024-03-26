@@ -11,6 +11,18 @@ function WorkingWithArrays() {
         completed: false,
       });
     const [todos, setTodos] = useState<any[]>([]);
+    const postTodo = async () => {
+        const response = await axios.post(API, todo);
+        setTodos([...todos, response.data]);
+      };
+    const deleteTodo = async (todo:any) => {
+        const response = await axios.delete(`${API}/${todo.id}`);
+        setTodos(todos.filter((t) => t.id !== todo.id));
+    };
+    const updateTodo = async () => {
+        const response = await axios.put(`${API}/${todo.id}`, todo);
+        setTodos(todos.map((t) => (t.id === todo.id ? todo : t)));
+    };
     const fetchTodos = async () => {
         const response = await axios.get(API);
         setTodos(response.data);
@@ -45,9 +57,35 @@ function WorkingWithArrays() {
         <button className="btn btn-success" onClick={updateTitle} >
         Update Title
         </button>
+        <input className="form-control" value={todo.id}
+            onChange={(e) => setTodo({ ...todo,
+            id: parseInt(e.target.value) })}/>
+        <input className="form-control" type="text" value={todo.title}
+            onChange={(e) => setTodo({
+            ...todo, title: e.target.value })}/>
+        <textarea className="form-control" value={todo.description}
+            onChange={(e) => setTodo({ ...todo,
+            description: e.target.value })} />
+        <input className="form-control" value={todo.due} type="date"
+            onChange={(e) => setTodo({
+            ...todo, due: e.target.value })} />
+        <label>
+            <input type="checkbox" defaultChecked={todo.completed}
+            onChange={(e) => setTodo({
+            ...todo, completed: (e.target.checked) })}/>
+            Completed
+        </label>
+        <button className="btn btn-primary" onClick={postTodo}> Post Todo </button>
+        <button className="btn btn-success" onClick={updateTodo}>
+        Update Todo
+        </button>
         <ul className="list-group">
         {todos.map((todo) => (
           <li className="list-group-item" key={todo.id}>
+            <button onClick={() => deleteTodo(todo)}
+                className="btn btn-danger float-end ms-2">
+                Delete
+            </button>
             <button className="btn btn-warning" onClick={() => fetchTodoById(todo.id)} >
             Edit
             </button>
