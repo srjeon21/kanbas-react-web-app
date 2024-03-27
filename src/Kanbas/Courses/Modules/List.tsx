@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaEllipsisV, FaCheckCircle, FaPlusCircle } from "react-icons/fa";
 import { useParams } from "react-router";
 import { useSelector, useDispatch } from "react-redux";
@@ -7,17 +7,39 @@ import {
   deleteModule,
   updateModule,
   setModule,
+  setModules,
 } from "./reducer";
 import { KanbasState } from "../../store";
+import * as client from "./client";
 
 function ModuleList() {
   const { courseId } = useParams();
+  useEffect(() => {
+    client.findModulesForCourse(courseId)
+      .then((modules) =>
+        dispatch(setModules(modules))
+    );
+  }, [courseId]);
   const moduleList = useSelector((state: KanbasState) =>
     state.modulesReducer.modules);
   const module = useSelector((state: KanbasState) =>
     state.modulesReducer.module);
   const dispatch = useDispatch();
-  const [selectedModule, setSelectedModule] = useState(moduleList[0]);
+  const [selectedModule, setSelectedModule] = useState<any>(moduleList[0]);
+  const handleAddModule = () => {
+    client.createModule(courseId, module).then((module) => {
+      dispatch(addModule(module));
+    });
+  };
+  const handleDeleteModule = (moduleId: string) => {
+    client.deleteModule(moduleId).then((status) => {
+      dispatch(deleteModule(moduleId));
+    });
+  };
+  const handleUpdateModule = async () => {
+    const status = await client.updateModule(module);
+    dispatch(updateModule(module));
+  };
 
   return (
     <>
@@ -33,10 +55,10 @@ function ModuleList() {
       <li className="list-group-item">
         <div className="form-group">
           <div className="buttons">
-            <button className="btn btn-success" onClick={() => dispatch(addModule({ ...module, course: courseId }))}>
+            <button className="btn btn-success" onClick={handleAddModule}>
               Add
             </button>
-            <button className="btn btn-warning" onClick={() => dispatch(updateModule(module))}>
+            <button className="btn btn-warning" onClick={handleUpdateModule}>
               Update
             </button>
           </div>
@@ -53,15 +75,15 @@ function ModuleList() {
         </div>
       </li>
         {moduleList
-        .filter((module) => module.course === courseId)
-        .map((module, index) => (
+        .filter((module:any) => module.course === courseId)
+        .map((module:any, index) => (
           <li key={index} className="list-group-item" onClick={() => setSelectedModule(module)}>
             <div>
               <div className="buttons">
                 <button className="btn btn-warning" onClick={() => dispatch(setModule(module))}>
                   Edit
                 </button>
-                  <button className="btn btn-danger" onClick={() => dispatch(deleteModule(module._id))}>
+                  <button className="btn btn-danger" onClick={() => handleDeleteModule(module._id)}>
                   Delete
                 </button><br/>
               </div>
@@ -73,9 +95,9 @@ function ModuleList() {
                 <FaEllipsisV className="ms-2" />
               </span>
             </div>
-            {selectedModule._id === module._id && (
+            {selectedModule?._id === module._id && (
               <ul className="list-group">
-                {module.lessons.map((lesson: { name: string }) => (
+                {module.lessons?.map((lesson: { name: string }) => (
                   <li className="list-group-item">
                     <FaEllipsisV className="me-2" />
                     {lesson.name}
@@ -86,7 +108,7 @@ function ModuleList() {
                   </li>
                 ))}
               </ul>
-            )}
+                )}
           </li>
         ))}
       </ul>
